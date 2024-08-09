@@ -1,18 +1,48 @@
+import uvicorn
 from fastapi import Body, FastAPI
 from pydantic import BaseModel, Field
 
 app = FastAPI()
 
 
-class Item(BaseModel):
-    name: str
-    price: float = 0.15
-    description: str | None = None
-    tax: float | None = None
-    tags: list[str] = []
+class Blog(BaseModel):
+    title: str
+    body: str
+    published: bool = True
 
 
-@app.post("/items")
-async def update_item(item: Item):
-    result = {"item": item}
-    return result
+@app.get("/blog")
+def create_blog(blog: Blog):
+    return {"data": blog}
+
+
+@app.post("/blog")
+def create_blog(blog: Blog):
+    return {"data": f"Blog is created with title as {blog.title}"}
+
+
+@app.get("/blog")
+def index(limit=10, published: bool = True, sort: str | None = None):
+    if published:
+        return {"data": f"{limit} published blogs from the db"}
+    else:
+        return {"data": f"{limit} blogs from the db"}
+
+
+@app.get("/blog/unpublished")
+def unpublished():
+    return {"data": "All unpublished blogs"}
+
+
+@app.get("/blog/{id}")
+def show(id: int):
+    return {"data": id}
+
+
+@app.get("/blog/{id}/comments")
+def comments(id: int):
+    return {"data": {"1", "2"}}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000)
