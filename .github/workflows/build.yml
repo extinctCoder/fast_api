@@ -43,16 +43,16 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ github.repository }}
-        #   tags: |
-        #     type=sha
-        #     type=edge
-        #     type=ref,event=pr
-        #     type=sha,format=long
-        #     type=ref,event=branch
-        #     type=semver,pattern=v{{major}}
-        #     type=semver,pattern={{version}}
-        #     type=semver,pattern={{major}}.{{minor}}
-        #     type=schedule,pattern={{date 'YYYYMMDD' tz='Asia/Dhaka'}}
+          tags: |
+            type=semver,pattern=v{{major}}
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=sha
+            type=edge
+            type=ref,event=pr
+            type=sha,format=long
+            type=ref,event=branch
+            type=schedule,pattern={{date 'YYYYMMDD' tz='Asia/Dhaka'}}
 
       - name: Build and push Docker image
         id: build_push_image
