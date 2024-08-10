@@ -25,3 +25,5 @@ docker_up_d:
 docker_down:
 	@docker compose down
 
+dev:
+	@fastapi dev src/main.py

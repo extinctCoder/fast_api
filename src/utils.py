@@ -18,7 +18,7 @@ SERVERS = [
 
 
 def latest_tag():
-    if Path(".version").is_file:
+    if isfile(".version"):
         return Path(".version").read_text().strip().lstrip("v")
 
     result = run(
@@ -28,3 +28,7 @@ def latest_tag():
         return result.stdout.strip().lstrip("v")
     else:
         return "unknown version"
+
+
+if __name__ == "__main__":
+    print(latest_tag())
