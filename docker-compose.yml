@@ -1,4 +1,17 @@
 services:
+  app_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: app_server:local
+    container_name: app_server
+    hostname: app_server
+    restart: unless-stopped
+    env_file:
+      - .env.sample
+    ports:
+      - 8000:80
+
   database_server:
     image: postgres:latest
     container_name: database_server

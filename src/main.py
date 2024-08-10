@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Response, status
 
-from books.routes import router as books_router
-from utils import DESCRIPTION, TITLE, latest_tag
+from .books.routes import router as books_router
+from .utils import CONTACT, DESCRIPTION, SERVERS, TITLE, latest_tag
 
 app = FastAPI(
     title=TITLE,
@@ -9,11 +9,10 @@ app = FastAPI(
     version=latest_tag(),
     docs_url="/docs",
     redoc_url=None,
-    contact={
-        "name": "Sabbir Ahmed Shourov",
-        "url": "https://www.github.com/extinctCoder",
-        "email": "write2shourov@gmail.com",
-    },
+    contact=CONTACT,
+    servers=SERVERS,
+    license_info={"name": "MIT"},
+    openapi_url="/openapi.json",
 )
 app.include_router(books_router, prefix="/books")
 
