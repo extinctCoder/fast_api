@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.0.2 (2024-08-10)
+
+### Fix
+
+* fix: added automated deployment to GHCR ([`cb0631b`](https://github.com/extinctCoder/fast_api/commit/cb0631b8f92949e688287fdb51234e2050ce699c))
+
 ## v0.0.1 (2024-08-10)
 
 ### Chore
