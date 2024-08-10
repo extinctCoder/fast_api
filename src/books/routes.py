@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 
-router = APIRouter(prefix="/books", tags=["books"])
+router = APIRouter(tags=["Book"])
 
 
-@router.get("/")
+@router.get("")
 async def root():
     return {"message": "BOOKS END POINT"}

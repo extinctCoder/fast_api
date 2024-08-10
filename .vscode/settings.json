@@ -5,7 +5,10 @@
     "healthcheck",
     "passlib",
     "pydantic",
+    "redoc",
+    "Sabbir",
     "sessionmaker",
+    "Shourov",
     "sqlalchemy",
     "uvicorn"
   ]
