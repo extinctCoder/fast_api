@@ -29,9 +29,13 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-        # trail
-      - name: Extract tag name
-        run: echo "${{ github.ref }}" | sed 's/refs\/tags\///' > .version
+      - name: Get the latest tag
+        id: latest_tag
+        uses: JinoArch/get-latest-tag@latest
+
+      - name: Genetate the version file
+        id: generate_version
+        run: echo "${{ steps.latest_tag.outputs.latestTag }}" > .version
 
       - name: Display version
         run: cat .version
