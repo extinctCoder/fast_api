@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v1.0.0 (2024-08-11)
+
+### Breaking
+
+* feat: new update
+
+BREAKING CHANGE: new version ([`c9a0507`](https://github.com/extinctCoder/fast_api/commit/c9a050733c1dc3989c272a5a11999f060f2e7338))
+
+### Fix
+
+* fix: new update 02 ([`ae8df86`](https://github.com/extinctCoder/fast_api/commit/ae8df86ef92a2e67eb423e8245f5ff0d16ac013d))
+
+* fix: lsjlasj ([`873f749`](https://github.com/extinctCoder/fast_api/commit/873f74983997d38902f28c7cf779c76816dea1a4))
+
 ## v0.3.1 (2024-08-11)
 
 ### Fix
