@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.0.8 (2024-08-11)
+
+### Fix
+
+* fix: renamed to pyproject ([`cca84a6`](https://github.com/extinctCoder/fast_api/commit/cca84a61ffc15ead237cbd127afa637b7677c9e8))
+
 ## v0.0.7 (2024-08-11)
 
 ### Fix
