@@ -48,8 +48,8 @@ jobs:
             prefix=
             suffix=
           tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
             type=sha,enable=true,priority=1,prefix=,suffix=,format=short
-            type=sha,enable=true,priority=2,prefix=,suffix=,format=long
 
       - name: Debug - Log all metadata
         run: |
