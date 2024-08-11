@@ -46,7 +46,7 @@ jobs:
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
             type=sha,prefix=,format=short
-            type=schedule,pattern={{date 'YYYYMMDD'}}
+            type=schedule
 
       - name: Debug - Log all metadata
         run: |
