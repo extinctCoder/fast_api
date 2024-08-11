@@ -18,26 +18,26 @@ jobs:
       packages: write
 
     steps:
-      - name: Checkout code repository
-        id: code_checkout
-        uses: actions/checkout@v4
+      #   - name: Checkout code repository
+      #     id: code_checkout
+      #     uses: actions/checkout@v4
 
-      - name: Log in Github Container registry
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+      #   - name: Log in Github Container registry
+      #     uses: docker/login-action@v3
+      #     with:
+      #       registry: ghcr.io
+      #       username: ${{ github.actor }}
+      #       password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Get the latest tag
-        id: latest_tag
-        uses: JinoArch/get-latest-tag@latest
+      #   - name: Get the latest tag
+      #     id: latest_tag
+      #     uses: JinoArch/get-latest-tag@latest
 
-      - name: Genetate the version file
-        id: generate_version
-        run: |
-          echo "${{ steps.latest_tag.outputs.latestTag }}" > .version
-          cat .version
+      #   - name: Genetate the version file
+      #     id: generate_version
+      #     run: |
+      #       echo "${{ steps.latest_tag.outputs.latestTag }}" > .version
+      #       cat .version
 
       - name: Extract Docker metadata
         id: extract_meta
@@ -45,36 +45,31 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ github.repository }}
           tags: |
-            type=semver,pattern={{major}}
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=sha
-            type=ref,event=pr
-            type=sha,format=long
-            type=ref,event=branch
-            type=schedule,pattern={{year}}{{month}}{{day}}
+            type=sha,enable=true,priority=1,prefix=,suffix=,format=short
+            type=sha,enable=true,priority=2,prefix=,suffix=,format=long
+
       - name: Debug - Log all metadata
         run: |
           echo "Tags: ${{ steps.extract_meta.outputs.tags }}"
           echo "Labels: ${{ steps.extract_meta.outputs.labels }}"
 
-      - name: Build and push Docker image
-        id: build_push_image
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          push: true
-          file: Dockerfile
-          tags: ${{ steps.extract_meta.outputs.tags }}
-          labels: ${{ steps.extract_meta.outputs.labels }}
+    #   - name: Build and push Docker image
+    #     id: build_push_image
+    #     uses: docker/build-push-action@v3
+    #     with:
+    #       context: .
+    #       push: true
+    #       file: Dockerfile
+    #       tags: ${{ steps.extract_meta.outputs.tags }}
+    #       labels: ${{ steps.extract_meta.outputs.labels }}
 
-        #    tags: |
-        #     type=semver,pattern=v{{major}}
-        #     type=semver,pattern={{version}}
-        #     type=semver,pattern={{major}}.{{minor}}
-        #     type=sha
-        #     type=edge
-        #     type=ref,event=pr
-        #     type=sha,format=long
-        #     type=ref,event=branch
-        #     type=schedule,pattern={{date 'YYYYMMDD' tz='Asia/Dhaka'}}
+    #    tags: |
+    #     type=semver,pattern=v{{major}}
+    #     type=semver,pattern={{version}}
+    #     type=semver,pattern={{major}}.{{minor}}
+    #     type=sha
+    #     type=edge
+    #     type=ref,event=pr
+    #     type=sha,format=long
+    #     type=ref,event=branch
+    #     type=schedule,pattern={{date 'YYYYMMDD' tz='Asia/Dhaka'}}
