@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v0.2.2 (2024-08-11)
+
+### Fix
+
+* fix: new update ([`1ea7068`](https://github.com/extinctCoder/fast_api/commit/1ea70686d463333a90ff61fc8097a677f6ef7649))
+
+## v0.2.1 (2024-08-12)
+
+### Unknown
+
+* asdasdasd ([`16412b6`](https://github.com/extinctCoder/fast_api/commit/16412b6158691f6a3c4f20aa5c362df3a05533c3))
+
 ## v0.2.0 (2024-08-11)
 
 ### Feature
