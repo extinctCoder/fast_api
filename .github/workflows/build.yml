@@ -45,10 +45,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ github.repository }}
           flavor: |
             latest=auto
-            prefix=
-            suffix=
           tags: |
-            type=raw,value=latest,enable={{is_default_branch}}
             type=sha,enable=true,priority=1,prefix=,suffix=,format=short
 
       - name: Debug - Log all metadata
