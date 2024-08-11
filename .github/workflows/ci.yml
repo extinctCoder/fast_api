@@ -16,7 +16,7 @@ jobs:
 
       - name: Display extracted metadata
         run: |
-          echo "Working Latest tag: $${{ steps.latest_tag.outputs.latestTag }}"
+          echo "Working Latest tag: ${{ steps.latest_tag.outputs.latestTag }}"
 
       - name: Set up Docker Metadata Action
         uses: docker/metadata-action@v5
