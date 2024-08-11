@@ -43,9 +43,11 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ github.repository }}
+          context: git
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
             type=sha,enable=true,priority=1,prefix=,suffix=,format=short
+            type=schedule,pattern={{date 'YYYYMMDD' tz='Asia/Dhaka'}}
 
       - name: Debug - Log all metadata
         run: |
