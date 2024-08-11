@@ -42,8 +42,10 @@ jobs:
         id: extract_meta
         uses: docker/metadata-action@v5
         with:
+          context: git
           images: ${{ env.REGISTRY }}/${{ github.repository }}
           tags: |
+            type=ref,event=tag
             type=sha,prefix=,format=short
             type=raw,value=latest,enable={{is_default_branch}}
 
