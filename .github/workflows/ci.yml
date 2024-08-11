@@ -18,6 +18,7 @@ jobs:
       - name: Set up Docker Metadata Action
         uses: docker/metadata-action@v5
         id: extract_meta
+        context: git
         with:
           images: |
             ${{ github.repository }}
@@ -35,3 +36,5 @@ jobs:
         run: |
           echo "Tags: ${{ steps.extract_meta.outputs.tags }}"
           echo "Labels: ${{ steps.extract_meta.outputs.labels }}"
+          echo "------"
+          echo "${{ github.ref }}"
