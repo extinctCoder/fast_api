@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.0.7 (2024-08-11)
+
+### Fix
+
+* fix: new update ([`a09bd16`](https://github.com/extinctCoder/fast_api/commit/a09bd1650238aa8225fa720e2b44eca3acebd6eb))
+
 ## v0.0.6 (2024-08-11)
 
 ### Fix
