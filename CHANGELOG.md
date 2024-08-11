@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.2.0 (2024-08-11)
+
+### Feature
+
+* feat: new creation ([`019fb15`](https://github.com/extinctCoder/fast_api/commit/019fb15766c9a6cc4763f621e6cc3a53aafe5bcd))
+
 ## v0.1.0 (2024-08-11)
 
 ### Feature
