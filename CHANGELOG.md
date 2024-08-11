@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.0.5 (2024-08-11)
+
+### Fix
+
+* fix: new update ([`dfdb787`](https://github.com/extinctCoder/fast_api/commit/dfdb787f933bf69b23a0c62013fcb8c28a52e8a6))
+
 ## v1.0.4 (2024-08-11)
 
 ### Fix
