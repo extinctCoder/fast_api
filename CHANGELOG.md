@@ -1,6 +1,20 @@
 # CHANGELOG
 
+## v0.3.1 (2024-08-11)
+
+### Fix
+
+* fix: new update 2024 ([`7c888c0`](https://github.com/extinctCoder/fast_api/commit/7c888c0d701ce0cfcc37f3631ce97a5656a238ca))
+
+### Unknown
+
+* Merge branch &#39;main&#39; of https://github.com/extinctCoder/fast_api ([`32cfd1e`](https://github.com/extinctCoder/fast_api/commit/32cfd1ef17e122f473d936c254b7bc6780ec0515))
+
 ## v0.3.0 (2024-08-11)
+
+### Fix
+
+* fix: kasdk ([`0010670`](https://github.com/extinctCoder/fast_api/commit/001067042626e62af3037d51a7796f39603c734d))
 
 ### Unknown
 
