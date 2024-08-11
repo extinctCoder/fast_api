@@ -1,9 +1,9 @@
 name: Extract Docker Metadata
 
 on:
-  release:
-    types:
-      - published
+  create:
+    tags:
+      - "*"
 
 jobs:
   extract_metadata:
