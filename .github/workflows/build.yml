@@ -2,6 +2,8 @@ name: Publish container images to GHCR
 
 on:
   push:
+    branches:
+      - "main"
     tags:
       - "v*"
 
