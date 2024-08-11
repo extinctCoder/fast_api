@@ -10,6 +10,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Get the latest tag
+        id: latest_tag
+        uses: JinoArch/get-latest-tag@latest
+
+      - name: Display extracted metadata
+        run: |
+          echo "Working Latest tag: $${{ steps.latest_tag.outputs.latestTag }}"
+
       - name: Set up Docker Metadata Action
         uses: docker/metadata-action@v5
         id: extract_meta
@@ -19,7 +27,7 @@ jobs:
           tags: |
             type=ref,event=branch
             type=ref,event=pr
-            type=semver,pattern={{raw}}
+            type=semver,pattern={{version}}
 
       - name: Display extracted metadata
         run: |
