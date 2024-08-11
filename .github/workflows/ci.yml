@@ -2,10 +2,6 @@ name: Extract Docker Metadata
 
 on:
   push:
-    branches:
-      - main
-    tags:
-      - "v*"
 
 jobs:
   extract_metadata:
@@ -23,6 +19,7 @@ jobs:
             type=ref,event=tag
             type=sha,prefix=,format=short
             type=raw,value=latest,enable={{is_default_branch}}
+            type=semver,pattern={{version}}
 
       - name: Display extracted metadata
         run: |
