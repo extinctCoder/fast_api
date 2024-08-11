@@ -3,8 +3,10 @@ name: Extract Docker Metadata
 on:
   release:
   push:
+    branches:
+      - main
     tags:
-      - "v*"
+      - "*"
 
 jobs:
   extract_metadata:
