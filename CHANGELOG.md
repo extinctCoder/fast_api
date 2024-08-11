@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.1.0 (2024-08-11)
+
+### Feature
+
+* feat: release ([`6ee37b3`](https://github.com/extinctCoder/fast_api/commit/6ee37b3e19c33e25f93535b0ba2e548fbb594cb2))
+
 ## v0.0.11 (2024-08-11)
 
 ### Fix
