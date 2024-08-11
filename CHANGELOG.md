@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.0.1 (2024-08-11)
+
+### Fix
+
+* fix: update 03 ([`3466409`](https://github.com/extinctCoder/fast_api/commit/3466409b56f28eb8c153b5d236deac0671126b08))
+
 ## v1.0.0 (2024-08-11)
 
 ### Breaking
