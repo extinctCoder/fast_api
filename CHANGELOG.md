@@ -1,5 +1,41 @@
 # CHANGELOG
 
+## v0.0.11 (2024-08-11)
+
+### Fix
+
+* fix: add back ([`c23038a`](https://github.com/extinctCoder/fast_api/commit/c23038aabdda963b598900f1c27351603a3e3325))
+
+### Unknown
+
+* update ([`a61321c`](https://github.com/extinctCoder/fast_api/commit/a61321cd5ac3c66ff1ea908dfb6059c38279e099))
+
+## v0.0.10 (2024-08-12)
+
+### Fix
+
+* fix: new update ([`8aaa221`](https://github.com/extinctCoder/fast_api/commit/8aaa2218d174e3af038d502c6caf1917a0af1cc3))
+
+### Unknown
+
+* update ([`47fbe6d`](https://github.com/extinctCoder/fast_api/commit/47fbe6daeb58d2bd70a2c2e6fb9ea8f0031cc73f))
+
+* uio ([`343fba8`](https://github.com/extinctCoder/fast_api/commit/343fba80b19ac6debc419f669bc3660fa6313290))
+
+* lkfdfjg ([`a837f60`](https://github.com/extinctCoder/fast_api/commit/a837f608ee5d78ff072d7fa7876c815c69b4d502))
+
+* build ([`2252339`](https://github.com/extinctCoder/fast_api/commit/2252339566ae4b9c610df64edd07a29b15b2c072))
+
+* build ([`a27ccd4`](https://github.com/extinctCoder/fast_api/commit/a27ccd4f5db5d537ef89ac3446e79da6ae07c467))
+
+* update ([`31c0e3b`](https://github.com/extinctCoder/fast_api/commit/31c0e3be32903beb135332352a08ca6f39c4ce09))
+
+* update ([`385ba32`](https://github.com/extinctCoder/fast_api/commit/385ba32b092f4d3ff0b532ca68a4585ff8de3430))
+
+* update ([`2efc2b5`](https://github.com/extinctCoder/fast_api/commit/2efc2b545a8d2e0b627b3b9ff3b8cc7f3e85d050))
+
+* update ([`a721bbc`](https://github.com/extinctCoder/fast_api/commit/a721bbcfe035a01dd65532de4b5db3b4fc8c8ea1))
+
 ## v0.0.8 (2024-08-11)
 
 ### Fix
