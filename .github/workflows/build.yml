@@ -44,9 +44,9 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ github.repository }}
           tags: |
-            type=edge,branch=main
             type=ref,event=tag
             type=ref,event=branch
+            type=edge,branch=main
             type=sha,prefix=,format=short
             type=raw,value=latest,enable={{is_default_branch}}
 
@@ -54,6 +54,7 @@ jobs:
         run: |
           echo "Tags: ${{ steps.extract_meta.outputs.tags }}"
           echo "Labels: ${{ steps.extract_meta.outputs.labels }}"
+          echo "GitHub ref: ${{ github.ref }}"
 
     #   - name: Build and push Docker image
     #     id: build_push_image
