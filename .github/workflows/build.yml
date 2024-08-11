@@ -44,9 +44,8 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ github.repository }}
           tags: |
-            type=raw,value=latest,enable={{is_default_branch}}
             type=sha,prefix=,format=short
-            type=schedule
+            type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Debug - Log all metadata
         run: |
