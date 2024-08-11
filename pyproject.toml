@@ -1,5 +1,5 @@
 [tool.semantic_release]
-version_variable = ["src/__init__.py:__version__"]
+version_variables = ["src/__init__.py:__version__"]
 commit_parser = "angular"
 
 [tool.semantic_release.commit_parser_options]
