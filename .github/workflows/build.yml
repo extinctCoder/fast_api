@@ -55,6 +55,7 @@ jobs:
           echo "Tags: ${{ steps.extract_meta.outputs.tags }}"
           echo "Labels: ${{ steps.extract_meta.outputs.labels }}"
           echo "GitHub ref: ${{ github.ref }}"
+          echo "GitHub ref: ${{ github }}"
 
     #   - name: Build and push Docker image
     #     id: build_push_image
