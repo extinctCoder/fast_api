@@ -1,8 +1,16 @@
 # CHANGELOG
 
+## v0.0.5 (2024-08-11)
+
+### Unknown
+
+* Merge branch &#39;main&#39; of https://github.com/extinctCoder/fast_api ([`480a05b`](https://github.com/extinctCoder/fast_api/commit/480a05bc13f003e90971bd62b26837de04206d0f))
+
 ## v0.0.4 (2024-08-11)
 
 ### Fix
+
+* fix: updated semantic release ([`f5c9fde`](https://github.com/extinctCoder/fast_api/commit/f5c9fdeca2f13d8a199f971ba8140cfcf7fa4e50))
 
 * fix: new update ([`9dc3f69`](https://github.com/extinctCoder/fast_api/commit/9dc3f69d4440992c085f68345a0ae961c9fd0ff2))
 
