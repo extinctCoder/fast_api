@@ -2,8 +2,6 @@ name: Extract Docker Metadata
 
 on:
   push:
-    branches:
-      - "main"
     tags:
       - "v*"
 
