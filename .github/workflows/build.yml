@@ -45,6 +45,8 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ github.repository }}
           flavor: |
             latest=auto
+            prefix=
+            suffix=
           tags: |
             type=sha,enable=true,priority=1,prefix=,suffix=,format=short
 
