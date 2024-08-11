@@ -2,11 +2,10 @@ name: Publish container images to GHCR
 
 on:
   push:
-  workflow_run:
-    workflows: ["Automated version release Schedule"]
-    types:
-      - completed
-  workflow_dispatch:
+    branches:
+      - "master"
+    tags:
+      - "v*"
 
 env:
   REGISTRY: ghcr.io
