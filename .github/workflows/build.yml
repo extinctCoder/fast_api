@@ -36,7 +36,9 @@ jobs:
 
       - name: Genetate the version file
         id: generate_version
-        run: echo "${{ steps.latest_tag.outputs.latestTag }}" > .version
+        run: |
+          echo "${{ steps.latest_tag.outputs.latestTag }}" > .version
+          cat .version
 
       - name: Extract Docker metadata
         id: extract_meta
@@ -44,15 +46,14 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ github.repository }}
           tags: |
-            type=semver,pattern=v{{major}}
+            type=semver,pattern={{major}}
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=sha
-            type=edge
             type=ref,event=pr
             type=sha,format=long
             type=ref,event=branch
-            type=schedule,pattern={{date 'YYYYMMDD' tz='Asia/Dhaka'}}
+            type=schedule,pattern={{year}}{{month}}{{day}}
 
       - name: Build and push Docker image
         id: build_push_image
@@ -63,3 +64,14 @@ jobs:
           file: Dockerfile
           tags: ${{ steps.extract_meta.outputs.tags }}
           labels: ${{ steps.extract_meta.outputs.labels }}
+
+        #    tags: |
+        #     type=semver,pattern=v{{major}}
+        #     type=semver,pattern={{version}}
+        #     type=semver,pattern={{major}}.{{minor}}
+        #     type=sha
+        #     type=edge
+        #     type=ref,event=pr
+        #     type=sha,format=long
+        #     type=ref,event=branch
+        #     type=schedule,pattern={{date 'YYYYMMDD' tz='Asia/Dhaka'}}
