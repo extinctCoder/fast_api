@@ -9,6 +9,8 @@ bcrypt = "*"
 sqlalchemy = "*"
 passlib = "*"
 fastapi = {extras = ["standard"], version = "*"}
+semantic-release = "*"
+python-semantic-release = "*"
 
 [dev-packages]
 black = "*"
