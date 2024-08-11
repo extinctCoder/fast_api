@@ -4,6 +4,8 @@ from os.path import isfile
 from pathlib import Path
 from subprocess import PIPE, run
 
+from . import __version__
+
 TITLE = "Books API"
 DESCRIPTION = "The Book API Service is a comprehensive API designed to facilitate interaction with book data, making it easy to access, manage, and utilize information about books in a variety of applications. Whether you're building a reading app, a book recommendation system, or a library management tool, our API provides a powerful and flexible solution for handling book-related data."
 CONTACT = {
@@ -18,16 +20,7 @@ SERVERS = [
 
 
 def latest_tag():
-    if isfile(".version"):
-        return Path(".version").read_text().strip().lstrip("v")
-
-    result = run(
-        ["git", "describe", "--tags", "--abbrev=0"], stdout=PIPE, stderr=PIPE, text=True
-    )
-    if result.returncode == 0:
-        return result.stdout.strip().lstrip("v")
-    else:
-        return "unknown version"
+    return __version__
 
 
 if __name__ == "__main__":

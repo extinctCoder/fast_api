@@ -1,32 +1,30 @@
-name: Automated version release Schedule
+name: Extract Docker Metadata
 
 on:
   push:
     branches:
       - main
-
-# on:
-#   pull_request:
-#     types:
-#       - closed
+    tags:
+      - "v*"
 
 jobs:
-  AutomatedRelease:
+  extract_metadata:
     runs-on: ubuntu-latest
-
-    permissions:
-      id-token: write
-      contents: write
-
     steps:
-      - name: Checkout code repository
-        id: code_checkout
+      - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Releasing new version with Python semantic release
-        id: release_version
-        uses: python-semantic-release/python-semantic-release@master
+      - name: Set up Docker Metadata Action
+        uses: docker/metadata-action@v5
+        id: extract_meta
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          images: ${{ github.repository }}
+          tags: |
+            type=ref,event=tag
+            type=sha,prefix=,format=short
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Display extracted metadata
+        run: |
+          echo "Tags: ${{ steps.extract_meta.outputs.tags }}"
+          echo "Labels: ${{ steps.extract_meta.outputs.labels }}"
