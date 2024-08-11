@@ -44,6 +44,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ github.repository }}
+          flavor: latest=auto
           tags: |
             type=sha,enable=true,priority=1,prefix=,suffix=,format=short
             type=sha,enable=true,priority=2,prefix=,suffix=,format=long
